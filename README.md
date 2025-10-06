@@ -3,9 +3,10 @@
 Este sistema implementa uma metodologia quantitativa robusta para avaliação e ranking de empresas públicas brasileiras utilizando alguns pilares de análise fundamentalista.Basicamente, vou classificar as empresas que estão no Brasil, que são públicas, numa espécie que classificador para fins de investimento. Fiz tudo isso num final de semana, qualquer atualização, principalmente em função das premissas dos classificadores, farei assim que possível. O objetivo é só demonstrar as tecnicalidades do projeto e conhecimento a respeito dos demosntrativos e indicadores financeiros. Em resumo, o projeto foi desenvolvido para identificar oportunidades de investimento com base em dados obtidos do Capital IQ.
 
 **1. METODOLOGIA DE CLASSIFICAÇÃO POR CLASSES**
+
 Priorizei os dados a partir de 2022, já que em 2021 os dados ainda sofriam influências por conta da pandemia. Mas a composição da base de dados inclui 2021, se vocês quiserem que a análise reflita esses outliers, é possível alterar os parâmetros.
 
-1.1 class_CAGR (Crescimento)
+**1.1 class_CAGR (Crescimento)**
 Métricas analisadas:
 •	Revenue CAGR (2022-LTM)
 •	EBITDA CAGR (2022-LTM)
@@ -21,7 +22,7 @@ Boa: Crescimento consistente acima da inflação, adequadas para value creation 
 Ok/Ruim: Empresas maduras ou em dificuldades - requerem turnaround ou estratégias de consolidação
 Péssima: Red flags significativos, risco de distress ou necessidade de reestruturação profunda
 
-1.2 class_Margins (Rentabilidade Operacional)
+**1.2 class_Margins (Rentabilidade Operacional)**
 Não considerei margem bruta, justamente para comparar maçãs com maçãs. Foquei em EBITDA e Lucro Líquido, que é o mais próximo do fluxo de caixa e do fluxo livre para o investidor de equity, respectivamente.
 Métricas analisadas:
 •	EBITDA Margin LTM
@@ -34,7 +35,7 @@ Cada métrica recebe de -2 a +2 pontos baseado em percentis. Score total determi
 •	Ruim/Péssima: Estrutura de custos insustentável, necessidade de reestruturação operacional urgente
 •	Value Driver: Margens são proxy de qualidade do modelo de negócio e resiliência competitiva.
 
-1.3 class_Multiplos (Valuation)
+**1.3 class_Multiplos (Valuation)**
 Aqui, há uma certa complexidade técnica, porque é uma métrica que depende do setor. Acho que todas as métricas, em geral, dependem do setor. Mas no final do dia, o que importa é fluxo de caixa para os shareholders. 
 Metodologia diferenciada: Comparação relativa à mediana do setor, usei múltiplos de Enterprise Value e Equity Value.
 Múltiplos avaliados:
@@ -91,7 +92,8 @@ Classificação:
 •	Ok: ≥0 (retornos adequados) 
 •	Ruim: ≥-3 (destruição de valor) 
 •	Péssima: <-3 (ineficiência severa de capital)
-Interpretação:
+
+**Interpretação:****
 •	Excelente: ROE > 20% indica vantagens competitivas sustentáveis (moats) - candidatos para multiple expansion strategies
 •	Boa: Retornos adequados com espaço para melhorias via operational excellence e working capital optimization.
 •	Ok: Foco em ROIC improvement através de asset light strategies e efficiency programs.
@@ -139,6 +141,7 @@ composite_score = (
     class_Profitability_score * 1.0 +
     class_Dividends_score * 1.0
 )
+
 **Rationale**: Pesos iguais evitam overweighting de qualquer dimensão específica, permitindo que empresas com diferentes perfis (growth vs value, high leverage vs low leverage) sejam avaliadas holisticamente.
 Range do score: -12 a +12
 Classificação final:

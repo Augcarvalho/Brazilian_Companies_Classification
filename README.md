@@ -2,6 +2,7 @@
 Sistema de Classificação Multidimensional para Análise de Investimentos
 Este sistema implementa uma metodologia quantitativa robusta para avaliação e ranking de empresas públicas brasileiras utilizando alguns pilares de análise fundamentalista. O projeto foi desenvolvido para identificar oportunidades de investimento com base em dados obtidos do Capital IQ.
 ________________________________________
+
 1. METODOLOGIA DE CLASSIFICAÇÃO POR CLASSES
 Priorizei os dados a partir de 2022, já que em 2021 os dados ainda sofriam influências por conta da pandemia. Mas a composição da base de dados inclui 2021, se vocês quiserem que a análise reflita esses outliers, é possível alterar os parâmetros.
 2.1 class_CAGR (Crescimento)
@@ -70,7 +71,6 @@ Métricas analisadas:
 •	Debt/EBITDA LTM (alavancagem)
 •	Interest Coverage LTM (capacidade de serviço da dívida)
 •	Levered FCF Margin LTM (geração de caixa pós-dívida)
-
 Classificação:
 Excelente: ≥4 (balanço forte, baixa alavancagem)
 Boa:       ≥2 (estrutura de capital saudável)
@@ -126,8 +126,9 @@ Ruim/Péssima: Red flag sobre FCF generation ou disciplina de capital allocation
 Empresas com histórico sólido de dividendos indicam FCF confiável - permitindo dividend recaps que podem retornar 30-50% do equity investment em 2-3 anos enquanto ainda se mantém ownership.
 Payout Ratio < 60%: Indica espaço para aumentar dividendos ou reinvestir em crescimento, ambos positivos para value creation.
 
-2. COMPOSITE SCORE: INTEGRAÇÃO MULTIDIMENSIONAL
-2.1 Metodologia de Agregação
+**
+2. COMPOSITE SCORE: INTEGRAÇÃO MULTIDIMENSIONAL**
+**2.1 Metodologia de Agregação**
 Ponderação igualitária, atribuí o mesmo peso para cada uma das classes, mas, novamente, se for do interesse dos senhores, é possível alterar. Particularmente, esse é só um critério que eu uso para investimentos em equity, existem muitos outros que não podem ser metrificados. 
 composite_score = (
     class_CAGR_score * 1.0 +
@@ -137,7 +138,7 @@ composite_score = (
     class_Profitability_score * 1.0 +
     class_Dividends_score * 1.0
 )
-Rationale: Pesos iguais evitam overweighting de qualquer dimensão específica, permitindo que empresas com diferentes perfis (growth vs value, high leverage vs low leverage) sejam avaliadas holisticamente.
+**Rationale**: Pesos iguais evitam overweighting de qualquer dimensão específica, permitindo que empresas com diferentes perfis (growth vs value, high leverage vs low leverage) sejam avaliadas holisticamente.
 Range do score: -12 a +12
 Classificação final:
 Excelente: ≥8  (top quartile - high conviction opportunities)
@@ -146,7 +147,7 @@ Ok:        ≥-2 (median - selective opportunities)
 Ruim:      ≥-7 (below median - high risk)
 Péssima:   <-7 (bottom quartile - avoid)
 Cara, eu fiquei surpreso com o resultado dessa análise, a melhor empresa foi uma que eu nem conhecia. Eu imaginava uma WEG da vida, um Banco do Brasil (cuidado com a Magnitisky). Por isso, analisem os dados, senhores. 
-2.2 Interpretação Estratégica:
+**2.2 Interpretação Estratégica:**
 Excelente (Score ≥8): Strong fundamentals ebntre múltiplas dimensões.
 Candidatos para club deals ou anchor investments em portfolios;
 Estratégia sugerida: Buy-and-hold com foco em operational improvements e add-on M&A;
@@ -160,28 +161,27 @@ Ruim/Péssima (Score <-2): Múltiplos red flags estruturais;
 Candidatos apenas para distressed funds ou turnaround specialists;
 Estratégia sugerida: Finge que não viu.
 
-3. APLICAÇÕES PRÁTICAS
+**3. APLICAÇÕES PRÁTICAS**
 3.1 Deal Sourcing e Screening: Pipeline filtering: Automaticamente identificar top companies por setor
 Red flag detection: Empresas com múltiplos pilares "Péssima" requerem due diligence intensiva.
 Comps building: Empresas "Excelente" definem benchmarks de performance por indústria.
-
-3.2 Valuation e Structuring
+**3.2 Valuation e Structuring**
 Entry multiple guidance: class_Multiplos indica atratividade do entry point vs mediana do setor;
 Leverage capacity: class_Qualidade determina maximum sustainable leverage para LBO;
 Exit multiple assumptions: class_Margins + class_Profitability indicam potencial para multiple expansion.
 
-3.3 Value Creation Planning
+**3.3 Value Creation Planning**
 100-day plan priorities: Pilares com classificação baixa indicam quick wins opportunities
 Operational initiatives: class_Margins baixa → cost optimization; class_Profitability baixa → working capital programs;
 Growth strategy: class_CAGR + class_Multiplos identificam buy-and-build platforms vs organic growth targets.
 
-3.4 Portfolio Monitoring
+**3.4 Portfolio Monitoring**
 Quarterly tracking: Evolução dos scores por pilar monitora progress vs value creation plan;
 Hold/Sell decisions: Empresas que evoluem para "Excelente" são candidatas para exit em peak performance;
 Risk management: Deterioração de scores dispara reviews e corrective actions
 
 
-4. LIMITAÇÕES E CONSIDERAÇÕES
+**4. LIMITAÇÕES E CONSIDERAÇÕES**
 Quantitative framework: Este sistema é um ponto de partida quantitativo. Decisões de investimento devem incorporar:
 Qualitative factors (management quality, competitive positioning, market dynamics);
 Forward-looking analysis (não apenas historical performance);
@@ -192,15 +192,15 @@ Financials: Métricas de leverage não se aplicam da mesma forma;
 REITs: Dividendos são estruturais, não indicativos de health;
 Biotech: Margem negativa é esperada em pre-revenue companies;
 
-5. CONCLUSÃO
+**5. CONCLUSÃO**
 Este projeto fornece uma metodologia sistemática, replicável e objetiva para screening e análise de oportunidades de investimento. A abordagem multi-pilar captura diferentes dimensões de qualidade empresarial, enquanto a comparação setorial garante que o valuation e as métricas de performance são contextualizadas apropriadamente.
 O sistema serve como:
 Deal sourcing tool: Identificação rápida de high-quality targets;
 Due diligence framework: Estrutura para deep dives setoriais;
 Value creation roadmap: Priorização de initiatives baseada em weaknesses identificadas;
 Portfolio monitoring dashboard: Tracking sistemático de performance vs benchmarks;
-
-Próximos passos:
+**
+Próximos passos:**
 Não sei, podemos aplicar mais modelos estatísticos ou machine learning com redes neurais. A princípio, esse projeto seria puramente para redes neurais, mas aplicando para teses de investimentos, parece um pouco simplista, principalmente depois de ler Human Action do Mises. Lembrem-se, não é possível prever a ação humana, olhem o caso da Game Stop, é um business model que não faz sentido e os preceitos de análises fundamentalistas não se aplicam. Tudo se resume em oferta e demanda, se estiverem vendendo, compre, se estiverem comprando, venda. Estamos a frente.
 Abs.,
 

@@ -57,7 +57,6 @@ Ok: ≥-1 ponto (fair value)
 Ruim: ≥-3 pontos (overvalued) 
 Péssima: <-3 pontos (extremamente caro).
 
-Interpretação para PE:
 Excelente: Potenciais mispriced assets - candidatos ideais para leveraged buyouts com upside múltiplo na entrada
 Boa: Entry point atrativo com múltipla de entrada baixa aumentando IRR potencial
 Ok: Valuation justo - retorno dependerá de value creation operacional

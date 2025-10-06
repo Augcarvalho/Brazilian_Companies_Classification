@@ -5,7 +5,8 @@ ________________________________________
 
 1. METODOLOGIA DE CLASSIFICAÇÃO POR CLASSES
 Priorizei os dados a partir de 2022, já que em 2021 os dados ainda sofriam influências por conta da pandemia. Mas a composição da base de dados inclui 2021, se vocês quiserem que a análise reflita esses outliers, é possível alterar os parâmetros.
-2.1 class_CAGR (Crescimento)
+
+1.1 class_CAGR (Crescimento)
 Métricas analisadas:
 •	Revenue CAGR (2022-LTM)
 •	EBITDA CAGR (2022-LTM)
@@ -51,7 +52,7 @@ Para cada múltiplo:
 - >130% da mediana:           -2 pontos (prêmio excessivo)
 Score total: -6 a +6
 
-Classificação final:
+**Classificação final:**
 Excelente: ≥4 pontos (oportunidade de valor significativa);
 Boa: ≥2 pontos (valuation atrativo) 
 Ok: ≥-1 ponto (fair value) 
@@ -65,7 +66,7 @@ Ruim/Péssima: Valuation proibitivo - dificuldade em gerar retornos adequados ao
 Value Driver: Múltiplo de entrada é 50% da equação de retorno. Um desconto de 20-30% vs mediana setorial pode adicionar 5-10% de IRR apenas pela compressão de múltiplo na saída.
 Vantagem metodológica: Comparação setorial elimina distorções de múltiplos absolutos (ex: tech tem P/E naturalmente alto vs utilities). Foca em relative value dentro de comps relevantes.
 
-1.4 class_Qualidade (Saúde Financeira):
+**1.4 class_Qualidade (Saúde Financeira):**
 É uma métrica importante, reflete o peso da estrutura de capital. Obviamente empresas muito envidadas em relação aos peers, devem sofrer redução no valor do equity.
 Métricas analisadas:
 •	Debt/EBITDA LTM (alavancagem)
@@ -79,7 +80,7 @@ Ruim:      ≥-2 (stress financeiro moderado)
 Péssima:   <-2 (risco de distress)
 Obs.: Empresas com Debt/EBITDA < 3x e Interest Coverage > 5x permitem estruturas de capital mais agressivas.
 
-1.5 class_Profitability (Retorno sobre Capital)
+**1.5 class_Profitability (Retorno sobre Capital)**
 Métricas analisadas:
 •	ROE LTM (retorno sobre patrimônio)
 •	ROA LTM (retorno sobre ativos)
@@ -98,7 +99,7 @@ Interpretação:
 •	Ruim/Péssima: Asset-heavy businesses com retornos subótimos - candidatos para sale-leaseback, divestitures ou operational turnaround.
 Asset Turnover: Métrica crítica para identificar eficiência operacional. Baixo turnover com margens altas = pricing power. Alto turnover com margens baixas = volume business.
 
-1.6 class_Dividends (Política de Alocação de Capital)
+**1.6 class_Dividends (Política de Alocação de Capital)**
 Metodologia avançada: Análise histórica de 5 anos (FY2021-LTM)
 Dimensões avaliadas:
 1.	Yield Médio Histórico: 
@@ -113,7 +114,8 @@ o	Pontuação: ≤60% (+1), ≤80% (0), >80% (-1)
 4.	Crescimento: 
 o	Comparação dividendos recentes vs antigos.
 o	Pontuação: >10% growth (+1), >0% (0), negativo (-1).
-Classificação:
+
+**Classificação:**
 Excelente: ≥5 (dividend aristocrat quality) bacana esse termo, né?;
 Boa:       ≥3 (pagador consistente);
 Ok:        ≥0 (dividendos ocasionais);;
@@ -127,7 +129,7 @@ Empresas com histórico sólido de dividendos indicam FCF confiável - permitind
 Payout Ratio < 60%: Indica espaço para aumentar dividendos ou reinvestir em crescimento, ambos positivos para value creation.
 
 **
-2. COMPOSITE SCORE: INTEGRAÇÃO MULTIDIMENSIONAL**
+**2. COMPOSITE SCORE: INTEGRAÇÃO MULTIDIMENSIONAL****
 **2.1 Metodologia de Agregação**
 Ponderação igualitária, atribuí o mesmo peso para cada uma das classes, mas, novamente, se for do interesse dos senhores, é possível alterar. Particularmente, esse é só um critério que eu uso para investimentos em equity, existem muitos outros que não podem ser metrificados. 
 composite_score = (
@@ -146,7 +148,8 @@ Boa:       ≥4  (above median - attractive risk/reward)
 Ok:        ≥-2 (median - selective opportunities)
 Ruim:      ≥-7 (below median - high risk)
 Péssima:   <-7 (bottom quartile - avoid)
-Cara, eu fiquei surpreso com o resultado dessa análise, a melhor empresa foi uma que eu nem conhecia. Eu imaginava uma WEG da vida, um Banco do Brasil (cuidado com a Magnitisky). Por isso, analisem os dados, senhores. 
+Cara, eu fiquei surpreso com o resultado dessa análise, a melhor empresa foi uma que eu nem conhecia. Eu imaginava uma WEG da vida, um Banco do Brasil (cuidado com a Magnitisky). Por isso, analisem os dados, senhores.
+
 **2.2 Interpretação Estratégica:**
 Excelente (Score ≥8): Strong fundamentals ebntre múltiplas dimensões.
 Candidatos para club deals ou anchor investments em portfolios;
@@ -165,6 +168,7 @@ Estratégia sugerida: Finge que não viu.
 3.1 Deal Sourcing e Screening: Pipeline filtering: Automaticamente identificar top companies por setor
 Red flag detection: Empresas com múltiplos pilares "Péssima" requerem due diligence intensiva.
 Comps building: Empresas "Excelente" definem benchmarks de performance por indústria.
+
 **3.2 Valuation e Structuring**
 Entry multiple guidance: class_Multiplos indica atratividade do entry point vs mediana do setor;
 Leverage capacity: class_Qualidade determina maximum sustainable leverage para LBO;
@@ -199,8 +203,8 @@ Deal sourcing tool: Identificação rápida de high-quality targets;
 Due diligence framework: Estrutura para deep dives setoriais;
 Value creation roadmap: Priorização de initiatives baseada em weaknesses identificadas;
 Portfolio monitoring dashboard: Tracking sistemático de performance vs benchmarks;
-**
-Próximos passos:**
+
+**Próximos passos:**
 Não sei, podemos aplicar mais modelos estatísticos ou machine learning com redes neurais. A princípio, esse projeto seria puramente para redes neurais, mas aplicando para teses de investimentos, parece um pouco simplista, principalmente depois de ler Human Action do Mises. Lembrem-se, não é possível prever a ação humana, olhem o caso da Game Stop, é um business model que não faz sentido e os preceitos de análises fundamentalistas não se aplicam. Tudo se resume em oferta e demanda, se estiverem vendendo, compre, se estiverem comprando, venda. Estamos a frente.
 Abs.,
 

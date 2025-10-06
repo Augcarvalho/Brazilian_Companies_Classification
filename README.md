@@ -1,4 +1,3 @@
-<img width="1799" height="792" alt="image" src="https://github.com/user-attachments/assets/29551ff4-452a-460a-b8ab-e2f70e74db0d" /># Brazil_Investment_Class
 Sistema de Classificação Multidimensional para Análise de Investimentos
 Este sistema implementa uma metodologia quantitativa robusta para avaliação e ranking de empresas públicas brasileiras utilizando alguns pilares de análise fundamentalista. O projeto foi desenvolvido para identificar oportunidades de investimento com base em dados obtidos do Capital IQ.
 ________________________________________

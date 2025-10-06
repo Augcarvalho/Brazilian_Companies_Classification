@@ -138,7 +138,7 @@ Payout Ratio < 60%: Indica espaço para aumentar dividendos ou reinvestir em cre
 **
 **2. COMPOSITE SCORE: INTEGRAÇÃO MULTIDIMENSIONAL****
 **2.1 Metodologia de Agregação**
-Ponderação igualitária, atribuí o mesmo peso para cada uma das classes, mas, novamente, se for do interesse dos senhores, é possível alterar. Particularmente, esse é só um critério que eu uso para investimentos em equity, existem muitos outros que não podem ser metrificados. 
+Ponderação igualitária, atribuí o mesmo peso para cada uma das classes, mas, novamente, se for do interesse dos senhores, é possível alterar. Particularmente, esse é só um critério que eu uso para investimentos em equity, existem muitos outros que não podem ser quantifidcados. 
 composite_score = (
     class_CAGR_score * 1.0 +
     class_Margins_score * 1.0 +

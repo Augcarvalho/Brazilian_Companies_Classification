@@ -189,8 +189,9 @@ Cara, eu fiquei surpreso com o resultado dessa análise, a melhor empresa foi um
 
 
 
+<img width="1770" height="599" alt="image" src="https://github.com/user-attachments/assets/f2675c92-2d42-4f8f-aac6-b1c8493cfbe3" />
 
-<img width="1775" height="590" alt="image" src="https://github.com/user-attachments/assets/28537451-49a8-4835-865f-6404fccc8b14" />
+
 
 **2.2 Interpretação Estratégica:**
 Excelente (Score ≥8): Strong fundamentals ebntre múltiplas dimensões.

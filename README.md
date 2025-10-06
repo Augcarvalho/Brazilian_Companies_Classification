@@ -19,6 +19,7 @@ Empresas em trajetória de alto crescimento, potenciais candidatas para growth e
 Boa: Crescimento consistente acima da inflação, adequadas para value creation através de melhorias operacionais
 Ok/Ruim: Empresas maduras ou em dificuldades - requerem turnaround ou estratégias de consolidação
 Péssima: Red flags significativos, risco de distress ou necessidade de reestruturação profunda
+
 1.2 class_Margins (Rentabilidade Operacional)
 Não considerei margem bruta, justamente para comparar maçãs com maçãs. Foquei em EBITDA e Lucro Líquido, que é o mais próximo do fluxo de caixa e do fluxo livre para o investidor de equity, respectivamente.
 Métricas analisadas:

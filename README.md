@@ -1,4 +1,4 @@
-# Brazil_Investment_Class
+<img width="1799" height="792" alt="image" src="https://github.com/user-attachments/assets/29551ff4-452a-460a-b8ab-e2f70e74db0d" /># Brazil_Investment_Class
 Sistema de Classificação Multidimensional para Análise de Investimentos
 Este sistema implementa uma metodologia quantitativa robusta para avaliação e ranking de empresas públicas brasileiras utilizando alguns pilares de análise fundamentalista. O projeto foi desenvolvido para identificar oportunidades de investimento com base em dados obtidos do Capital IQ.
 ________________________________________
@@ -149,6 +149,40 @@ Ok:        ≥-2 (median - selective opportunities)
 Ruim:      ≥-7 (below median - high risk)
 Péssima:   <-7 (bottom quartile - avoid)
 Cara, eu fiquei surpreso com o resultado dessa análise, a melhor empresa foi uma que eu nem conhecia. Eu imaginava uma WEG da vida, um Banco do Brasil (cuidado com a Magnitisky). Por isso, analisem os dados, senhores.
+
+
+<img width="1799" height="792" alt="image" src="https://github.com/user-attachments/assets/33498e6b-8663-4543-b6d6-21880e11fbbe" />
+<img width="1766" height="369" alt="image" src="https://github.com/user-attachments/assets/812bcf74-867c-4563-a76b-f3f6f3bfc002" />
+
+<img width="1759" height="833" alt="image" src="https://github.com/user-attachments/assets/db68a2ee-83eb-4cc2-acc5-a5c92725e7d3" />
+
+<img width="1771" height="871" alt="image" src="https://github.com/user-attachments/assets/f805078e-f8b4-4d6f-a63c-cfdca2d78c2c" />
+
+<img width="1761" height="687" alt="image" src="https://github.com/user-attachments/assets/62cc3edf-6bd3-40b0-8bc8-70a74c20e6fc" />
+
+<img width="1769" height="883" alt="image" src="https://github.com/user-attachments/assets/5c9e13c3-0032-45cb-a17f-71bb43ecbcb4" />
+
+
+<img width="1764" height="868" alt="image" src="https://github.com/user-attachments/assets/7939696d-55d2-4e65-b19f-f5a1cdb87fc1" />
+
+
+
+<img width="1748" height="588" alt="image" src="https://github.com/user-attachments/assets/21ebfb38-c97b-43c0-9ed6-94df25081269" />
+
+
+<img width="980" height="687" alt="image" src="https://github.com/user-attachments/assets/87fee7e4-3e6d-440f-92fc-ef7925334aec" />
+
+
+<img width="976" height="681" alt="image" src="https://github.com/user-attachments/assets/86346184-8cfb-4462-9af1-d830f8091754" />
+
+
+
+<img width="1512" height="853" alt="image" src="https://github.com/user-attachments/assets/809cd0e4-ab50-4eea-b0bd-b290c2ab6745" />
+
+
+
+
+<img width="1775" height="590" alt="image" src="https://github.com/user-attachments/assets/28537451-49a8-4835-865f-6404fccc8b14" />
 
 **2.2 Interpretação Estratégica:**
 Excelente (Score ≥8): Strong fundamentals ebntre múltiplas dimensões.

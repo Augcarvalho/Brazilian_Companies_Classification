@@ -1,7 +1,6 @@
 # Brazil_Investment_Class
 Sistema de Classificação Multidimensional para Análise de Investimentos
-Visão Geral do Framework
-Este sistema implementa uma metodologia quantitativa robusta para avaliação e ranking de empresas públicas brasileiras utilizando alguns pilares de analise fundamentalista. O projeto foi desenvolvido para identificar oportunidades de investimento com base em dados obtidos do Capital IQ.
+Este sistema implementa uma metodologia quantitativa robusta para avaliação e ranking de empresas públicas brasileiras utilizando alguns pilares de análise fundamentalista. O projeto foi desenvolvido para identificar oportunidades de investimento com base em dados obtidos do Capital IQ.
 ________________________________________
 1. METODOLOGIA DE CLASSIFICAÇÃO POR CLASSES
 Priorizei os dados a partir de 2022, já que em 2021 os dados ainda sofriam influências por conta da pandemia. Mas a composição da base de dados inclui 2021, se vocês quiserem que a análise reflita esses outliers, é possível alterar os parâmetros.

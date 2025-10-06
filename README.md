@@ -1,4 +1,5 @@
-Sistema de Classificação Multidimensional para Análise de Investimentos
+**Sistema de Classificação Multidimensional para Análise de Investimentos**
+
 Este sistema implementa uma metodologia quantitativa robusta para avaliação e ranking de empresas públicas brasileiras utilizando alguns pilares de análise fundamentalista.Basicamente, vou classificar as empresas que estão no Brasil, que são públicas, numa espécie que classificador para fins de investimento. Fiz tudo isso num final de semana, qualquer atualização, principalmente em função das premissas dos classificadores, farei assim que possível. O objetivo é só demonstrar as tecnicalidades do projeto e conhecimento a respeito dos demosntrativos e indicadores financeiros. Em resumo, o projeto foi desenvolvido para identificar oportunidades de investimento com base em dados obtidos do Capital IQ.
 
 **1. METODOLOGIA DE CLASSIFICAÇÃO POR CLASSES**

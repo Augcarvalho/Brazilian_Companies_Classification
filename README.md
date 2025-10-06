@@ -1,4 +1,4 @@
-LEIA ISSO AQUI, CAMPEÃO:
+OS OUTPUTS (GRÁFICOS) ESTÃO AQUI, CAMPEÃO:
 
 
 ******** A maioria dos outputs são dinâmicos, o que não é possível visualizar no previw do gitHub, mas você pode baixar e executar no VSCode. Vou printar os resultados neste preview, mas a qualidade não é a mesma. Se houver algum ajuste que vocês queiram fazer, pode me mandar mensagem, sou bacana. Abs.,*********

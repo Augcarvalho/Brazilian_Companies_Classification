@@ -1,1 +1,207 @@
 # Brazil_Investment_Class
+Sistema de Classificação Multidimensional para Análise de Investimentos
+Visão Geral do Framework
+Este sistema implementa uma metodologia quantitativa robusta para avaliação e ranking de empresas públicas brasileiras utilizando alguns pilares de analise fundamentalista. O projeto foi desenvolvido para identificar oportunidades de investimento com base em dados obtidos do Capital IQ.
+________________________________________
+2. METODOLOGIA DE CLASSIFICAÇÃO POR CLASSES
+Priorizei os dados a partir de 2022, já que em 2021 os dados ainda sofriam influências por conta da pandemia. Mas a composição da base de dados inclui 2021, se vocês quiserem que a análise reflita esses outliers, é possível alterar os parâmetros.
+2.1 class_CAGR (Crescimento)
+Métricas analisadas:
+•	Revenue CAGR (2022-LTM)
+•	EBITDA CAGR (2022-LTM)
+•	Net Income CAGR (2022-LTM)
+Critérios de classificação:
+Excelente: ≥2 métricas com CAGR > 15%
+Boa:       ≥ 2 métricas com CAGR > 5%
+Ok:        ≥ 2 métricas com CAGR ≥ 0%
+Ruim:      ≥ 2 métricas com CAGR < 0%
+Péssima:   Demais casos
+Empresas em trajetória de alto crescimento, potenciais candidatas para growth equity ou buy-and-build strategies
+Boa: Crescimento consistente acima da inflação, adequadas para value creation através de melhorias operacionais
+Ok/Ruim: Empresas maduras ou em dificuldades - requerem turnaround ou estratégias de consolidação
+Péssima: Red flags significativos, risco de distress ou necessidade de reestruturação profunda
+2.2 class_Margins (Rentabilidade Operacional)
+Não considerei margem bruta, justamente para comparar maçãs com maçãs. Foquei em EBITDA e Lucro Líquido, que é o mais próximo do fluxo de caixa e do fluxo livre para o investidor de equity, respectivamente.
+Métricas analisadas:
+•	EBITDA Margin LTM
+•	Net Margin LTM
+Sistema de pontuação:
+Cada métrica recebe de -2 a +2 pontos baseado em percentis. Score total determina classificação (≥3 = Excelente, ≥2 = Boa, etc.)
+•	Excelente: Margens superiores indicam poder de precificação, vantagens competitivas ou eficiência operacional excepcional
+•	Boa: Margens saudáveis com espaço para expansão através de operational excellence
+•	Ok: Margens medianas - foco em cost optimization e efficiency gains
+•	Ruim/Péssima: Estrutura de custos insustentável, necessidade de reestruturação operacional urgente
+•	Value Driver: Margens são proxy de qualidade do modelo de negócio e resiliência competitiva.
+
+2.3 class_Multiplos (Valuation)
+Aqui, há uma certa complexidade técnica, porque é uma métrica que depende do setor. Acho que todas as métricas, em geral, dependem do setor. Mas no final do dia, o que importa é fluxo de caixa para os shareholders. 
+Metodologia diferenciada: Comparação relativa à mediana do setor, usei múltiplos de Enterprise Value e Equity Value.
+Múltiplos avaliados:
+•	EV/Revenue
+•	EV/EBITDA LTM
+•	P/E LTM
+•	P/BV LTM
+Sistema de scoring:
+Para cada múltiplo:
+- ≤70% da mediana setorial:  +2 pontos (significativo desconto)
+- ≤85% da mediana:            +1 ponto  (desconto moderado)
+- ±15% da mediana:             0 pontos (fair value)
+- ≤130% da mediana:           -1 ponto  (prêmio moderado)
+- >130% da mediana:           -2 pontos (prêmio excessivo)
+Score total: -6 a +6
+
+Classificação final:
+Excelente: ≥4 pontos (oportunidade de valor significativa);
+Boa: ≥2 pontos (valuation atrativo) 
+Ok: ≥-1 ponto (fair value) 
+Ruim: ≥-3 pontos (overvalued) 
+Péssima: <-3 pontos (extremamente caro).
+
+Interpretação para PE:
+Excelente: Potenciais mispriced assets - candidatos ideais para leveraged buyouts com upside múltiplo na entrada
+Boa: Entry point atrativo com múltipla de entrada baixa aumentando IRR potencial
+Ok: Valuation justo - retorno dependerá de value creation operacional
+Ruim/Péssima: Valuation proibitivo - dificuldade em gerar retornos adequados ao risco mesmo com melhorias operacionais
+Value Driver: Múltiplo de entrada é 50% da equação de retorno. Um desconto de 20-30% vs mediana setorial pode adicionar 5-10% de IRR apenas pela compressão de múltiplo na saída.
+Vantagem metodológica: Comparação setorial elimina distorções de múltiplos absolutos (ex: tech tem P/E naturalmente alto vs utilities). Foca em relative value dentro de comps relevantes.
+
+2.4 class_Qualidade (Saúde Financeira):
+É uma métrica importante, reflete o peso da estrutura de capital. Obviamente empresas muito envidadas em relação aos peers, devem sofrer redução no valor do equity.
+Métricas analisadas:
+•	Debt/EBITDA LTM (alavancagem)
+•	Interest Coverage LTM (capacidade de serviço da dívida)
+•	Levered FCF Margin LTM (geração de caixa pós-dívida)
+
+Classificação:
+Excelente: ≥4 (balanço forte, baixa alavancagem)
+Boa:       ≥2 (estrutura de capital saudável)
+Ok:        ≥0 (alavancagem gerenciável)
+Ruim:      ≥-2 (stress financeiro moderado)
+Péssima:   <-2 (risco de distress)
+Obs.: Empresas com Debt/EBITDA < 3x e Interest Coverage > 5x permitem estruturas de capital mais agressivas.
+
+2.5 class_Profitability (Retorno sobre Capital)
+Métricas analisadas:
+•	ROE LTM (retorno sobre patrimônio)
+•	ROA LTM (retorno sobre ativos)
+•	Current Ratio LTM (liquidez de curto prazo)
+•	Asset Turnover LTM (eficiência de ativos)
+Classificação:
+•	Excelente: ≥5 (retornos excepcionais sobre capital) 
+•	Boa: ≥2 (retornos acima do custo de capital) 
+•	Ok: ≥0 (retornos adequados) 
+•	Ruim: ≥-3 (destruição de valor) 
+•	Péssima: <-3 (ineficiência severa de capital)
+Interpretação:
+•	Excelente: ROE > 20% indica vantagens competitivas sustentáveis (moats) - candidatos para multiple expansion strategies
+•	Boa: Retornos adequados com espaço para melhorias via operational excellence e working capital optimization.
+•	Ok: Foco em ROIC improvement através de asset light strategies e efficiency programs.
+•	Ruim/Péssima: Asset-heavy businesses com retornos subótimos - candidatos para sale-leaseback, divestitures ou operational turnaround.
+Asset Turnover: Métrica crítica para identificar eficiência operacional. Baixo turnover com margens altas = pricing power. Alto turnover com margens baixas = volume business.
+
+2.6 class_Dividends (Política de Alocação de Capital)
+Metodologia avançada: Análise histórica de 5 anos (FY2021-LTM)
+Dimensões avaliadas:
+1.	Yield Médio Histórico: 
+o	Média dos dividend yields (dividendos/preço) nos últimos anos
+o	Pontuação: ≥5% (+2), ≥3% (+1), ≥1.5% (0), <1.5% (-1).
+2.	Consistência: 
+o	Número de anos com pagamento de dividendos
+o	Pontuação: ≥4 anos (+2), ≥3 anos (+1), ≥2 anos (0), <2 (-1)
+3.	Sustentabilidade (Payout Ratio): 
+o	Payout médio histórico
+o	Pontuação: ≤60% (+1), ≤80% (0), >80% (-1)
+4.	Crescimento: 
+o	Comparação dividendos recentes vs antigos.
+o	Pontuação: >10% growth (+1), >0% (0), negativo (-1).
+Classificação:
+Excelente: ≥5 (dividend aristocrat quality) bacana esse termo, né?;
+Boa:       ≥3 (pagador consistente);
+Ok:        ≥0 (dividendos ocasionais);;
+Ruim:      ≥-2 (inconsistência);
+Péssima:   <-2 (sem histórico ou payout insustentável).
+Excelente: Empresas maduras com FCF consistente - candidatas para dividend recaps durante holding period para accelerated capital return;
+Boa: Cash generation confiável permite financiamento de growth initiatives sem diluição;
+Ok: Flexibilidade para redirecionar capital de dividendos para growth capex ou M&A;
+Ruim/Péssima: Red flag sobre FCF generation ou disciplina de capital allocation, ou fecha as portas.
+Empresas com histórico sólido de dividendos indicam FCF confiável - permitindo dividend recaps que podem retornar 30-50% do equity investment em 2-3 anos enquanto ainda se mantém ownership.
+Payout Ratio < 60%: Indica espaço para aumentar dividendos ou reinvestir em crescimento, ambos positivos para value creation.
+
+3. COMPOSITE SCORE: INTEGRAÇÃO MULTIDIMENSIONAL
+3.1 Metodologia de Agregação
+Ponderação igualitária, atribuí o mesmo peso para cada uma das classes, mas, novamente, se for do interesse dos senhores, é possível alterar. Particularmente, esse é só um critério que eu uso para investimentos em equity, existem muitos outros que não podem ser metrificados. 
+composite_score = (
+    class_CAGR_score * 1.0 +
+    class_Margins_score * 1.0 +
+    class_Multiplos_score * 1.0 +
+    class_Qualidade_score * 1.0 +
+    class_Profitability_score * 1.0 +
+    class_Dividends_score * 1.0
+)
+Rationale: Pesos iguais evitam overweighting de qualquer dimensão específica, permitindo que empresas com diferentes perfis (growth vs value, high leverage vs low leverage) sejam avaliadas holisticamente.
+Range do score: -12 a +12
+Classificação final:
+Excelente: ≥8  (top quartile - high conviction opportunities)
+Boa:       ≥4  (above median - attractive risk/reward)
+Ok:        ≥-2 (median - selective opportunities)
+Ruim:      ≥-7 (below median - high risk)
+Péssima:   <-7 (bottom quartile - avoid)
+Cara, eu fiquei surpreso com o resultado dessa análise, a melhor empresa foi uma que eu nem conhecia. Eu imaginava uma WEG da vida, um Banco do Brasil (cuidado com a Magnitisky). Por isso, analisem os dados, senhores. 
+3.2 Interpretação Estratégica:
+Excelente (Score ≥8): Strong fundamentals ebntre múltiplas dimensões.
+Candidatos para club deals ou anchor investments em portfolios;
+Estratégia sugerida: Buy-and-hold com foco em operational improvements e add-on M&A;
+Boa (Score 4-7): Solid investment cases com 1-2 weakness areas identificáveis
+Oportunidades para targeted value creation initiatives
+Estratégia sugerida: Operational focus em áreas de melhoria + financial engineering.
+Ok (Score -2 to 3): Mixed fundamentals - require deep dive case-by-case;
+Potencial para special situations ou sector rotation plays;
+Estratégia sugerida: Contrarian bets em setores out-of-favor ou turnaround candidates;
+Ruim/Péssima (Score <-2): Múltiplos red flags estruturais;
+Candidatos apenas para distressed funds ou turnaround specialists;
+Estratégia sugerida: Finge que não viu.
+
+4. APLICAÇÕES PRÁTICAS
+4.1 Deal Sourcing e Screening: Pipeline filtering: Automaticamente identificar top companies por setor
+Red flag detection: Empresas com múltiplos pilares "Péssima" requerem due diligence intensiva.
+Comps building: Empresas "Excelente" definem benchmarks de performance por indústria.
+
+4.2 Valuation e Structuring
+Entry multiple guidance: class_Multiplos indica atratividade do entry point vs mediana do setor;
+Leverage capacity: class_Qualidade determina maximum sustainable leverage para LBO;
+Exit multiple assumptions: class_Margins + class_Profitability indicam potencial para multiple expansion.
+
+4.3 Value Creation Planning
+100-day plan priorities: Pilares com classificação baixa indicam quick wins opportunities
+Operational initiatives: class_Margins baixa → cost optimization; class_Profitability baixa → working capital programs;
+Growth strategy: class_CAGR + class_Multiplos identificam buy-and-build platforms vs organic growth targets.
+
+4.4 Portfolio Monitoring
+Quarterly tracking: Evolução dos scores por pilar monitora progress vs value creation plan;
+Hold/Sell decisions: Empresas que evoluem para "Excelente" são candidatas para exit em peak performance;
+Risk management: Deterioração de scores dispara reviews e corrective actions
+
+
+5. LIMITAÇÕES E CONSIDERAÇÕES
+Quantitative framework: Este sistema é um ponto de partida quantitativo. Decisões de investimento devem incorporar:
+Qualitative factors (management quality, competitive positioning, market dynamics);
+Forward-looking analysis (não apenas historical performance);
+Macro considerations (cycles, regulatory, geopolitical);
+Deal-specific factors (synergies, strategic fit, exit optionality);
+Setores especiais: Alguns setores requerem ajustes metodológicos:
+Financials: Métricas de leverage não se aplicam da mesma forma;
+REITs: Dividendos são estruturais, não indicativos de health;
+Biotech: Margem negativa é esperada em pre-revenue companies;
+
+6. CONCLUSÃO
+Este projeto fornece uma metodologia sistemática, replicável e objetiva para screening e análise de oportunidades de investimento. A abordagem multi-pilar captura diferentes dimensões de qualidade empresarial, enquanto a comparação setorial garante que o valuation e as métricas de performance são contextualizadas apropriadamente.
+O sistema serve como:
+Deal sourcing tool: Identificação rápida de high-quality targets;
+Due diligence framework: Estrutura para deep dives setoriais;
+Value creation roadmap: Priorização de initiatives baseada em weaknesses identificadas;
+Portfolio monitoring dashboard: Tracking sistemático de performance vs benchmarks;
+
+Próximos passos:
+Não sei, podemos aplicar mais modelos estatísticos ou machine learning com redes neurais. A princípio, esse projeto seria puramente para redes neurais, mas aplicando para teses de investimentos, parece um pouco simplista, principalmente depois de ler Human Action do Mises. Lembrem-se, não é possível prever a ação humana, olhem o caso da Game Stop, é um business model que não faz sentido e os preceitos de análises fundamentalistas não se aplicam. Tudo se resume em oferta e demanda, se estiverem vendendo, compre, se estiverem comprando, venda. Estamos a frente.
+Abs.,
+

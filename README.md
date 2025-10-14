@@ -216,6 +216,9 @@ Value creation roadmap
 Portfolio monitoring dashboard: Tracking sistemático de performance vs benchmarks;
 
 **Próximos passos:**
-Não sei, podemos aplicar mais modelos estatísticos ou machine learning. A princípio, esse projeto seria puramente para redes neurais, mas aplicando para teses de investimentos, parece um pouco simplista, principalmente depois de ler Human Action. Estamos a frente.
+Vou incluir um estudo de valuation spreads sobre as mesmas empresas e setores da nossa base de dados, talvez esse seja um estudo a parte.
+Não sei, podemos aplicar mais modelos estatísticos ou machine learning. A princípio, esse projeto seria puramente para redes neurais, mas aplicando para teses de investimentos me parece simplista, ou só não pensei numa forma adequada de aplicação ainda. V
+
+Estamos a frente.
 Abs.,
 

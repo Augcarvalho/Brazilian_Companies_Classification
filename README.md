@@ -113,7 +113,7 @@ Classificação:
 •	Ruim/Péssima: Asset-heavy businesses com retornos subótimos - candidatos para sale-leaseback, divestitures ou operational turnaround.
 Asset Turnover: Métrica crítica para identificar eficiência operacional. Baixo turnover com margens altas = pricing power. Alto turnover com margens baixas = volume business.
 
-**1.6 class_Dividends (Política de Alocação de Capital)**
+**1.6 class_Dividends**
 Metodologia avançada: Análise histórica de 5 anos (FY2021-LTM)
 Dimensões avaliadas:
 
@@ -137,10 +137,10 @@ Dimensões avaliadas:
 •	Ruim:      ≥-2 (inconsistência);
 •	Péssima:   <-2 (sem histórico ou payout insustentável).
 
-•	Excelente: Empresas maduras com FCF consistente - candidatas para dividend recaps durante holding period para accelerated capital return;
-•	Boa: Cash generation confiável permite financiamento de growth initiatives sem diluição;
+•	Excelente: Empresas maduras com FCF consistente
+•	Boa: Cash generation confiável
 •	Ok: Flexibilidade para redirecionar capital de dividendos para growth capex ou M&A;
-•	Ruim/Péssima: Red flag sobre FCF generation ou disciplina de capital allocation, ou fecha as portas.
+•	Ruim/Péssima: Red flag sobre FCF generation ou a empresa usa caixa para investir na própria operação.
 
 Empresas com histórico sólido de dividendos indicam FCF confiável - permitindo dividend recaps que podem retornar 30-50% do equity investment em 2-3 anos enquanto ainda se mantém ownership.
 Payout Ratio < 60%: Indica espaço para aumentar dividendos ou reinvestir em crescimento, ambos positivos para value creation.
@@ -210,9 +210,9 @@ Cara, eu fiquei surpreso com o resultado dessa análise, a melhor empresa foi um
 **CONCLUSÃO**
 Este projeto fornece uma metodologia sistemática, replicável e objetiva para screening e análise de oportunidades de investimento. A abordagem multi-pilar captura diferentes dimensões de qualidade empresarial, enquanto a comparação setorial garante que o valuation e as métricas de performance são contextualizadas apropriadamente.
 O sistema serve como:
-Deal sourcing tool: Identificação rápida de high-quality targets;
+Invesstment sourcing tool: Identificação rápida de high-quality targets;
 Due diligence framework: Estrutura para deep dives setoriais;
-Value creation roadmap: Priorização de initiatives baseada em weaknesses identificadas;
+Value creation roadmap
 Portfolio monitoring dashboard: Tracking sistemático de performance vs benchmarks;
 
 **Próximos passos:**

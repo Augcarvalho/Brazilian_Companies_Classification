@@ -148,14 +148,18 @@ composite_score = (
     class_Dividends_score * 1.0
 )
 
-**Rationale**: Pesos iguais evitam overweighting de qualquer dimensão específica, permitindo que empresas com diferentes perfis (growth vs value, high leverage vs low leverage) sejam avaliadas holisticamente.
+**Racional**: Pesos iguais evitam overweighting de qualquer dimensão específica, permitindo que empresas com diferentes perfis sejam avaliadas holisticamente.
+
 Range do score: -12 a +12
+
 Classificação final:
+
 Excelente: ≥8  (top quartile - high conviction opportunities)
 Boa:       ≥4  (above median - attractive risk/reward)
 Ok:        ≥-2 (median - selective opportunities)
 Ruim:      ≥-7 (below median - high risk)
 Péssima:   <-7 (bottom quartile - avoid)
+
 Cara, eu fiquei surpreso com o resultado dessa análise, a melhor empresa foi uma que eu nem conhecia. Eu imaginava uma WEG da vida, um Banco do Brasil (cuidado com a Magnitisky). Por isso, analisem os dados, senhores.
 
 

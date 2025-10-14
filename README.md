@@ -17,12 +17,14 @@ Métricas analisadas:
 •	Revenue CAGR (2022-LTM)
 •	EBITDA CAGR (2022-LTM)
 •	Net Income CAGR (2022-LTM)
+
 Critérios de classificação:
-Excelente: ≥2 métricas com CAGR > 15%
-Boa:       ≥ 2 métricas com CAGR > 5%
-Ok:        ≥ 2 métricas com CAGR ≥ 0%
-Ruim:      ≥ 2 métricas com CAGR < 0%
-Péssima:   Demais casos
+
+•	Excelente: ≥2 métricas com CAGR > 15%
+•	Boa:       ≥ 2 métricas com CAGR > 5%
+•	Ok:        ≥ 2 métricas com CAGR ≥ 0%
+•	Ruim:      ≥ 2 métricas com CAGR < 0%
+•	Péssima:   Demais casos
 Empresas em trajetória de alto crescimento, potenciais candidatas para growth equity ou buy-and-build strategies
 Boa: Crescimento consistente acima da inflação, adequadas para value creation através de melhorias operacionais
 Ok/Ruim: Empresas maduras ou em dificuldades - requerem turnaround ou estratégias de consolidação
@@ -33,8 +35,11 @@ Não considerei margem bruta, justamente para comparar maçãs com maçãs. Foqu
 Métricas analisadas:
 •	EBITDA Margin LTM
 •	Net Margin LTM
+
 Sistema de pontuação:
+
 Cada métrica recebe de -2 a +2 pontos baseado em percentis. Score total determina classificação (≥3 = Excelente, ≥2 = Boa, etc.)
+
 •	Excelente: Margens superiores indicam poder de precificação, vantagens competitivas ou eficiência operacional excepcional
 •	Boa: Margens saudáveis com espaço para expansão através de operational excellence
 •	Ok: Margens medianas - foco em cost optimization e efficiency gains
@@ -44,6 +49,7 @@ Cada métrica recebe de -2 a +2 pontos baseado em percentis. Score total determi
 **1.3 class_Multiplos (Valuation)**
 Aqui, há uma certa complexidade técnica, porque é uma métrica que depende do setor. Acho que todas as métricas, em geral, dependem do setor. Mas no final do dia, o que importa é fluxo de caixa para os shareholders. 
 Metodologia diferenciada: Comparação relativa à mediana do setor, usei múltiplos de Enterprise Value e Equity Value.
+
 Múltiplos avaliados:
 •	EV/Revenue
 •	EV/EBITDA LTM
@@ -51,26 +57,25 @@ Múltiplos avaliados:
 •	P/BV LTM
 Sistema de scoring:
 Para cada múltiplo:
-- ≤70% da mediana setorial:  +2 pontos (significativo desconto)
-- ≤85% da mediana:            +1 ponto  (desconto moderado)
-- ±15% da mediana:             0 pontos (fair value)
-- ≤130% da mediana:           -1 ponto  (prêmio moderado)
-- >130% da mediana:           -2 pontos (prêmio excessivo)
-Score total: -6 a +6
+•	- ≤70% da mediana setorial:  +2 pontos (significativo desconto)
+•	- ≤85% da mediana:            +1 ponto  (desconto moderado)
+•	- ±15% da mediana:             0 pontos (fair value)
+•	- ≤130% da mediana:           -1 ponto  (prêmio moderado)
+•	- >130% da mediana:           -2 pontos (prêmio excessivo)
+•	Score total: -6 a +6
 
 **Classificação final:**
-Excelente: ≥4 pontos (oportunidade de valor significativa);
-Boa: ≥2 pontos (valuation atrativo) 
-Ok: ≥-1 ponto (fair value) 
-Ruim: ≥-3 pontos (overvalued) 
-Péssima: <-3 pontos (extremamente caro).
+•	    Excelente: ≥4 pontos (oportunidade de valor significativa);
+•	    Boa: ≥2 pontos (valuation atrativo) 
+•	    Ok: ≥-1 ponto (fair value) 
+•	    Ruim: ≥-3 pontos (overvalued) 
+•	    Péssima: <-3 pontos (extremamente caro).
 
-Excelente: Potenciais mispriced assets - candidatos ideais para leveraged buyouts com upside múltiplo na entrada
-Boa: Entry point atrativo com múltipla de entrada baixa aumentando IRR potencial
-Ok: Valuation justo - retorno dependerá de value creation operacional
-Ruim/Péssima: Valuation proibitivo - dificuldade em gerar retornos adequados ao risco mesmo com melhorias operacionais
-Value Driver: Múltiplo de entrada é 50% da equação de retorno. Um desconto de 20-30% vs mediana setorial pode adicionar 5-10% de IRR apenas pela compressão de múltiplo na saída.
-Vantagem metodológica: Comparação setorial elimina distorções de múltiplos absolutos (ex: tech tem P/E naturalmente alto vs utilities). Foca em relative value dentro de comps relevantes.
+•	    Excelente: Potenciais mispriced assets - candidatos ideais para leveraged buyouts com upside múltiplo na entrada
+•	    Boa: Entry point atrativo com múltiplo de entrada baixa aumentando IRR potencial
+•	    Ok: Valuation justo - retorno dependerá de value creation operacional
+•	    Ruim/Péssima: Valuation proibitivo - dificuldade em gerar retornos adequados ao risco mesmo com melhorias operacionais
+•	    Vantagem metodológica: Comparação setorial elimina distorções de múltiplos absolutos (ex: tech tem P/E naturalmente alto vs utilities). Foca em relative value dentro de comps relevantes.
 
 **1.4 class_Qualidade (Saúde Financeira):**
 É uma métrica importante, reflete o peso da estrutura de capital. Obviamente empresas muito envidadas em relação aos peers, devem sofrer redução no valor do equity.
@@ -78,13 +83,15 @@ Métricas analisadas:
 •	Debt/EBITDA LTM (alavancagem)
 •	Interest Coverage LTM (capacidade de serviço da dívida)
 •	Levered FCF Margin LTM (geração de caixa pós-dívida)
+
 Classificação:
-Excelente: ≥4 (balanço forte, baixa alavancagem)
-Boa:       ≥2 (estrutura de capital saudável)
-Ok:        ≥0 (alavancagem gerenciável)
-Ruim:      ≥-2 (stress financeiro moderado)
-Péssima:   <-2 (risco de distress)
-Obs.: Empresas com Debt/EBITDA < 3x e Interest Coverage > 5x permitem estruturas de capital mais agressivas.
+
+•	Excelente: ≥4 (balanço forte, baixa alavancagem)
+•	Boa:       ≥2 (estrutura de capital saudável)
+•	Ok:        ≥0 (alavancagem gerenciável)
+•	Ruim:      ≥-2 (stress financeiro moderado)
+•	Péssima:   <-2 (risco de distress)
+        Obs.: Empresas com Debt/EBITDA < 3x e Interest Coverage > 5x permitem estruturas de capital mais agressivas.
 
 **1.5 class_Profitability (Retorno sobre Capital)**
 Métricas analisadas:
@@ -109,29 +116,32 @@ Asset Turnover: Métrica crítica para identificar eficiência operacional. Baix
 **1.6 class_Dividends (Política de Alocação de Capital)**
 Metodologia avançada: Análise histórica de 5 anos (FY2021-LTM)
 Dimensões avaliadas:
+
 1.	Yield Médio Histórico: 
-o	Média dos dividend yields (dividendos/preço) nos últimos anos
-o	Pontuação: ≥5% (+2), ≥3% (+1), ≥1.5% (0), <1.5% (-1).
+•	Média dos dividend yields (dividendos/preço) nos últimos anos
+•	Pontuação: ≥5% (+2), ≥3% (+1), ≥1.5% (0), <1.5% (-1).
 2.	Consistência: 
-o	Número de anos com pagamento de dividendos
-o	Pontuação: ≥4 anos (+2), ≥3 anos (+1), ≥2 anos (0), <2 (-1)
+•	Número de anos com pagamento de dividendos
+•	Pontuação: ≥4 anos (+2), ≥3 anos (+1), ≥2 anos (0), <2 (-1)
 3.	Sustentabilidade (Payout Ratio): 
-o	Payout médio histórico
-o	Pontuação: ≤60% (+1), ≤80% (0), >80% (-1)
+•	Payout médio histórico
+•	Pontuação: ≤60% (+1), ≤80% (0), >80% (-1)
 4.	Crescimento: 
-o	Comparação dividendos recentes vs antigos.
-o	Pontuação: >10% growth (+1), >0% (0), negativo (-1).
+•	Comparação dividendos recentes vs antigos.
+•	Pontuação: >10% growth (+1), >0% (0), negativo (-1).
 
 **Classificação:**
-Excelente: ≥5 (dividend aristocrat quality) bacana esse termo, né?;
-Boa:       ≥3 (pagador consistente);
-Ok:        ≥0 (dividendos ocasionais);;
-Ruim:      ≥-2 (inconsistência);
-Péssima:   <-2 (sem histórico ou payout insustentável).
-Excelente: Empresas maduras com FCF consistente - candidatas para dividend recaps durante holding period para accelerated capital return;
-Boa: Cash generation confiável permite financiamento de growth initiatives sem diluição;
-Ok: Flexibilidade para redirecionar capital de dividendos para growth capex ou M&A;
-Ruim/Péssima: Red flag sobre FCF generation ou disciplina de capital allocation, ou fecha as portas.
+•	Excelente: ≥5 (dividend aristocrat quality) bacana esse termo, né?;
+•	Boa:       ≥3 (pagador consistente);
+•	Ok:        ≥0 (dividendos ocasionais);;
+•	Ruim:      ≥-2 (inconsistência);
+•	Péssima:   <-2 (sem histórico ou payout insustentável).
+
+•	Excelente: Empresas maduras com FCF consistente - candidatas para dividend recaps durante holding period para accelerated capital return;
+•	Boa: Cash generation confiável permite financiamento de growth initiatives sem diluição;
+•	Ok: Flexibilidade para redirecionar capital de dividendos para growth capex ou M&A;
+•	Ruim/Péssima: Red flag sobre FCF generation ou disciplina de capital allocation, ou fecha as portas.
+
 Empresas com histórico sólido de dividendos indicam FCF confiável - permitindo dividend recaps que podem retornar 30-50% do equity investment em 2-3 anos enquanto ainda se mantém ownership.
 Payout Ratio < 60%: Indica espaço para aumentar dividendos ou reinvestir em crescimento, ambos positivos para value creation.
 
@@ -154,13 +164,13 @@ Range do score: -12 a +12
 
 Classificação final:
 
-Excelente: ≥8  (top quartile - high conviction opportunities)
-Boa:       ≥4  (above median - attractive risk/reward)
-Ok:        ≥-2 (median - selective opportunities)
-Ruim:      ≥-7 (below median - high risk)
-Péssima:   <-7 (bottom quartile - avoid)
+•	Excelente: ≥8  (top quartile - high conviction opportunities)
+•	Boa:       ≥4  (above median - attractive risk/reward)
+•	Ok:        ≥-2 (median - selective opportunities)
+•	Ruim:      ≥-7 (below median - high risk)
+•	Péssima:   <-7 (bottom quartile - avoid)
 
-Cara, eu fiquei surpreso com o resultado dessa análise, a melhor empresa foi uma que eu nem conhecia. Eu imaginava uma WEG da vida, um Banco do Brasil (cuidado com a Magnitisky). Por isso, analisem os dados, senhores.
+Cara, eu fiquei surpreso com o resultado dessa análise, a melhor empresa foi uma que eu nem conhecia. Eu imaginava uma WEG da vida, um Banco do Brasil.
 
 
 <img width="1799" height="792" alt="image" src="https://github.com/user-attachments/assets/33498e6b-8663-4543-b6d6-21880e11fbbe" />
@@ -206,6 +216,6 @@ Value creation roadmap: Priorização de initiatives baseada em weaknesses ident
 Portfolio monitoring dashboard: Tracking sistemático de performance vs benchmarks;
 
 **Próximos passos:**
-Não sei, podemos aplicar mais modelos estatísticos ou machine learning com redes neurais. A princípio, esse projeto seria puramente para redes neurais, mas aplicando para teses de investimentos, parece um pouco simplista, principalmente depois de ler Human Action. Estamos a frente.
+Não sei, podemos aplicar mais modelos estatísticos ou machine learning. A princípio, esse projeto seria puramente para redes neurais, mas aplicando para teses de investimentos, parece um pouco simplista, principalmente depois de ler Human Action. Estamos a frente.
 Abs.,
 

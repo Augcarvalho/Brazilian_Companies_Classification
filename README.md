@@ -1,3 +1,5 @@
+Obs.: Ainda estou melhorando as premissas, mas já está ficando bom.
+
 OS OUTPUTS (GRÁFICOS) ESTÃO AQUI:
 
 
